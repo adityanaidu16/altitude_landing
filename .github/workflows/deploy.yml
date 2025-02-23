@@ -1,52 +1,60 @@
-name: Deploy to GitHub Pages
+name: Deploy Next.js site to Pages
+
 on:
   push:
-    branches: [ main ]
+    branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "18"
+          cache: 'npm'
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Install dependencies
         run: |
           cd altitude-landing
-          npm install
+          npm ci
 
-      - name: Build
+      - name: Build with Next.js
         run: |
           cd altitude-landing
           npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /altitude-landing
 
-      - name: Check if 'out' directory exists
-        run: |
-          if [ -d "./altitude-landing/out" ]; then echo "out directory exists"; else echo "out directory does not exist"; fi
+      - name: List directory contents
+        run: ls -R altitude-landing
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./altitude-landing/out
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
