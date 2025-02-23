@@ -167,7 +167,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-xl p-8">
                 <blockquote>
                   <div className="text-xl font-medium italic" style={{ color: colors.primary }}>
-                    "Altitude has transformed our analyst workflow. What used to take days now takes hours, and the quality of our initial drafts has improved dramatically."
+                    &quot;Altitude has transformed our analyst workflow. What used to take days now takes hours, and the quality of our initial drafts has improved dramatically.&quot;
                   </div>
                   <footer className="mt-4">
                     <p className="text-base font-medium" style={{ color: colors.primary }}>James Chen</p>
