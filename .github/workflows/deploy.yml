@@ -20,9 +20,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Ensure full history is cloned
 
       - name: List repository contents (debug)
-        run: ls -R
+        run: ls -R /home/runner/work/altitude_landing/altitude-landing
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,6 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd altitude-landing
+          ls -l  # Confirm package-lock.json is here
           npm ci
 
       - name: Build with Next.js
@@ -40,7 +43,7 @@ jobs:
           cd altitude-landing
           npm run build
 
-      - name: List directory contents
+      - name: List directory contents after build
         run: ls -R altitude-landing
 
       - name: Upload artifact
