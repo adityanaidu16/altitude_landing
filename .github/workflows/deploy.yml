@@ -1,41 +1,38 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    # Add permissions for pages
     permissions:
       pages: write
       id-token: write
 
-    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          # Removing cache since we don't have a lock file
-          # cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd altitude-landing
+          npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          cd altitude-landing
+          npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /altitude-landing
 
