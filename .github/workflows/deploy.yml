@@ -36,10 +36,14 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /altitude-landing
 
+      - name: Check if 'out' directory exists
+        run: |
+          if [ -d "./altitude-landing/out" ]; then echo "out directory exists"; else echo "out directory does not exist"; fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./altitude-landing/out
 
       - name: Deploy to GitHub Pages
         id: deployment
