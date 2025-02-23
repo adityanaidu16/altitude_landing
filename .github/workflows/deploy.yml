@@ -28,7 +28,6 @@ jobs:
         run: |
           cd altitude-landing
           npm install
-
       - name: Build
         run: |
           cd altitude-landing
@@ -39,7 +38,6 @@ jobs:
       - name: Check if 'out' directory exists
         run: |
           if [ -d "./altitude-landing/out" ]; then echo "out directory exists"; else echo "out directory does not exist"; fi
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
