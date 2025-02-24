@@ -40,11 +40,8 @@ jobs:
         run: |
           cd altitude-landing
           npm run build
-
-      - name: List directory contents
-        run: |
-          cd altitude-landing
-          ls -R out
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
