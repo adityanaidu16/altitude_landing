@@ -40,6 +40,8 @@ jobs:
         run: |
           cd altitude-landing
           npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /altitude-landing
 
       - name: List directory contents
         run: |
