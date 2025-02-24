@@ -41,7 +41,12 @@ jobs:
           cd altitude-landing
           npm run build
         env:
-          GITHUB_REPOSITORY: ${{ github.repository }}
+          NEXT_PUBLIC_BASE_PATH: /altitude-landing
+
+      - name: List directory contents
+        run: |
+          cd altitude-landing
+          ls -R out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
