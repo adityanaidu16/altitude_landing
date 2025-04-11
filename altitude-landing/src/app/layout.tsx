@@ -10,7 +10,7 @@ const cormorant = Cormorant_Garamond({
 
 
 export const metadata = {
-  title: 'Altitude - AI-Powered Investment Banking',
+  title: 'ptchr - AI-Powered Investment Banking',
   description: 'Transform your deal process with AI-powered excellence',
 };
 
