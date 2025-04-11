@@ -19,7 +19,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0">
-              <span style={{ color: colors.primary }} className="text-2xl font-bold italic">Altitude AI</span>
+              <span style={{ color: colors.primary }} className="text-2xl font-bold italic">ptchr</span>
             </div>
             <div className="hidden md:flex md:items-center md:space-x-6">
               <a href="#features" style={{ color: colors.primary }} className="hover:opacity-80">Solutions</a>
@@ -127,7 +127,7 @@ export default function LandingPage() {
                 Deliver Excellence at Speed
               </h2>
               <p className="mt-3 max-w-3xl text-lg" style={{ color: colors.lightText }}>
-                Focus on high-value analysis while Altitude handles the heavy lifting. Cut manual work by 80% without sacrificing quality.
+                Focus on high-value analysis while ptchr handles the heavy lifting. Cut manual work by 80% without sacrificing quality.
               </p>
               
               <div className="mt-12 space-y-10">
@@ -167,7 +167,7 @@ export default function LandingPage() {
               <div className="bg-white rounded-xl p-8">
                 <blockquote>
                   <div className="text-xl font-medium italic" style={{ color: colors.primary }}>
-                    &quot;Altitude has transformed our analyst workflow. What used to take days now takes hours, and the quality of our initial drafts has improved dramatically.&quot;
+                    &quot;ptchr has transformed our analyst workflow. What used to take days now takes hours, and the quality of our initial drafts has improved dramatically.&quot;
                   </div>
                   <footer className="mt-4">
                     <p className="text-base font-medium" style={{ color: colors.primary }}>James Chen</p>
@@ -185,7 +185,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             <span className="block">Ready to transform your deal process?</span>
-            <span className="block text-opacity-90 italic" style={{ color: colors.secondary }}>Join leading banks already using Altitude.</span>
+            <span className="block text-opacity-90 italic" style={{ color: colors.secondary }}>Join leading banks already using ptchr.</span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <a href="https://tally.so/r/mJWoqr" target="_blank" rel="noopener noreferrer">
@@ -216,7 +216,7 @@ export default function LandingPage() {
               </a>
             </div>
             <p className="mt-8 text-base md:mt-0 md:order-1" style={{ color: colors.lightText }}>
-              © 2025 Altitude. All rights reserved.
+              © 2025 ptchr. All rights reserved.
             </p>
           </div>
         </div>
